@@ -3,7 +3,7 @@
 Twice-daily gas price tracking for Arlington, VA + 27 major US metros
 (including Pittsburgh), on a fast mobile-first GitHub Pages site.
 
-**Live:** https://james-see.github.io/gas-tracker/
+**Live:** https://gastracker.live/ (custom domain; also at https://james-see.github.io/gas-tracker/)
 
 - Average + lowest regular gas price per area
 - 10 cheapest stations for the selected Arlington zipcode
