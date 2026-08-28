@@ -1,0 +1,478 @@
+{
+ "data": {
+  "locationBySearchTerm": {
+   "trends": [
+    {
+     "areaName": "Virginia",
+     "country": "US",
+     "today": 3.88,
+     "todayLow": 3.35
+    },
+    {
+     "areaName": "United States",
+     "country": "US",
+     "today": 4.08,
+     "todayLow": 0
+    }
+   ],
+   "stations": {
+    "count": 9,
+    "results": [
+     {
+      "id": "4448",
+      "name": "BP",
+      "latitude": 38.895874,
+      "longitude": -77.140972,
+      "distance": null,
+      "fuels": [
+       "regular_gas",
+       "midgrade_gas",
+       "premium_gas",
+       "diesel"
+      ],
+      "address": {
+       "line1": "5601 Lee Highway",
+       "locality": "Arlington",
+       "region": "VA",
+       "postalCode": "22207"
+      },
+      "prices": [
+       {
+        "credit": {
+         "price": 3.85,
+         "formattedPrice": "$3.85",
+         "nickname": "fasted2",
+         "postedTime": "2026-08-27T18:08:52.879Z"
+        },
+        "fuelProduct": "regular_gas"
+       },
+       {
+        "credit": {
+         "price": 0,
+         "formattedPrice": "- - -",
+         "nickname": null,
+         "postedTime": null
+        },
+        "fuelProduct": "midgrade_gas"
+       },
+       {
+        "credit": {
+         "price": 0,
+         "formattedPrice": "- - -",
+         "nickname": null,
+         "postedTime": null
+        },
+        "fuelProduct": "premium_gas"
+       },
+       {
+        "credit": {
+         "price": 0,
+         "formattedPrice": "- - -",
+         "nickname": null,
+         "postedTime": null
+        },
+        "fuelProduct": "diesel"
+       }
+      ]
+     },
+     {
+      "id": "18536",
+      "name": "Shell",
+      "latitude": 38.89515,
+      "longitude": -77.14162,
+      "distance": null,
+      "fuels": [
+       "regular_gas",
+       "midgrade_gas",
+       "premium_gas"
+      ],
+      "address": {
+       "line1": "5630 Langston Blvd",
+       "locality": "Arlington",
+       "region": "VA",
+       "postalCode": "22207"
+      },
+      "prices": [
+       {
+        "credit": {
+         "price": 3.85,
+         "formattedPrice": "$3.85",
+         "nickname": "DataFeed",
+         "postedTime": "2026-08-27T03:04:10.739Z"
+        },
+        "fuelProduct": "regular_gas"
+       },
+       {
+        "credit": {
+         "price": 4.45,
+         "formattedPrice": "$4.45",
+         "nickname": "DataFeed",
+         "postedTime": "2026-08-27T03:04:10.755Z"
+        },
+        "fuelProduct": "midgrade_gas"
+       },
+       {
+        "credit": {
+         "price": 4.85,
+         "formattedPrice": "$4.85",
+         "nickname": "DataFeed",
+         "postedTime": "2026-08-27T03:04:10.708Z"
+        },
+        "fuelProduct": "premium_gas"
+       }
+      ]
+     },
+     {
+      "id": "18534",
+      "name": "Liberty",
+      "latitude": 38.89736,
+      "longitude": -77.10846,
+      "distance": null,
+      "fuels": [
+       "regular_gas",
+       "midgrade_gas",
+       "premium_gas",
+       "diesel"
+      ],
+      "address": {
+       "line1": "4019 Langston Blvd",
+       "locality": "Arlington",
+       "region": "VA",
+       "postalCode": "22201"
+      },
+      "prices": [
+       {
+        "credit": {
+         "price": 4.03,
+         "formattedPrice": "$4.03",
+         "nickname": "MERTRW",
+         "postedTime": "2026-08-27T00:33:22.244Z"
+        },
+        "fuelProduct": "regular_gas"
+       },
+       {
+        "credit": {
+         "price": 0,
+         "formattedPrice": "- - -",
+         "nickname": null,
+         "postedTime": null
+        },
+        "fuelProduct": "midgrade_gas"
+       },
+       {
+        "credit": {
+         "price": 0,
+         "formattedPrice": "- - -",
+         "nickname": null,
+         "postedTime": null
+        },
+        "fuelProduct": "premium_gas"
+       },
+       {
+        "credit": {
+         "price": 5.69,
+         "formattedPrice": "$5.69",
+         "nickname": "MERTRW",
+         "postedTime": "2026-08-27T00:33:22.244Z"
+        },
+        "fuelProduct": "diesel"
+       }
+      ]
+     },
+     {
+      "id": "14714",
+      "name": "Exxon",
+      "latitude": 38.89762,
+      "longitude": -77.1091,
+      "distance": null,
+      "fuels": [
+       "regular_gas",
+       "midgrade_gas",
+       "premium_gas"
+      ],
+      "address": {
+       "line1": "4035 Langston Blvd",
+       "locality": "Arlington",
+       "region": "VA",
+       "postalCode": "22201"
+      },
+      "prices": [
+       {
+        "credit": {
+         "price": 0,
+         "formattedPrice": "- - -",
+         "nickname": null,
+         "postedTime": null
+        },
+        "fuelProduct": "regular_gas"
+       },
+       {
+        "credit": {
+         "price": 0,
+         "formattedPrice": "- - -",
+         "nickname": null,
+         "postedTime": null
+        },
+        "fuelProduct": "midgrade_gas"
+       },
+       {
+        "credit": {
+         "price": 0,
+         "formattedPrice": "- - -",
+         "nickname": null,
+         "postedTime": null
+        },
+        "fuelProduct": "premium_gas"
+       }
+      ]
+     },
+     {
+      "id": "18533",
+      "name": "Exxon",
+      "latitude": 38.89722,
+      "longitude": -77.12364,
+      "distance": null,
+      "fuels": [
+       "regular_gas",
+       "midgrade_gas",
+       "premium_gas",
+       "diesel"
+      ],
+      "address": {
+       "line1": "4746 Langston Blvd",
+       "locality": "Arlington",
+       "region": "VA",
+       "postalCode": "22207"
+      },
+      "prices": [
+       {
+        "credit": {
+         "price": 4.09,
+         "formattedPrice": "$4.09",
+         "nickname": "DataFeed",
+         "postedTime": "2026-08-27T14:41:00.052Z"
+        },
+        "fuelProduct": "regular_gas"
+       },
+       {
+        "credit": {
+         "price": 0,
+         "formattedPrice": "- - -",
+         "nickname": null,
+         "postedTime": null
+        },
+        "fuelProduct": "midgrade_gas"
+       },
+       {
+        "credit": {
+         "price": 0,
+         "formattedPrice": "- - -",
+         "nickname": null,
+         "postedTime": null
+        },
+        "fuelProduct": "premium_gas"
+       },
+       {
+        "credit": {
+         "price": 0,
+         "formattedPrice": "- - -",
+         "nickname": null,
+         "postedTime": null
+        },
+        "fuelProduct": "diesel"
+       }
+      ]
+     },
+     {
+      "id": "65769",
+      "name": "Shell",
+      "latitude": 38.89807,
+      "longitude": -77.12434,
+      "distance": null,
+      "fuels": [
+       "regular_gas",
+       "midgrade_gas",
+       "premium_gas"
+      ],
+      "address": {
+       "line1": "2240 N Glebe Rd",
+       "locality": "Arlington",
+       "region": "VA",
+       "postalCode": "22207"
+      },
+      "prices": [
+       {
+        "credit": {
+         "price": 0,
+         "formattedPrice": "- - -",
+         "nickname": null,
+         "postedTime": null
+        },
+        "fuelProduct": "regular_gas"
+       },
+       {
+        "credit": {
+         "price": 0,
+         "formattedPrice": "- - -",
+         "nickname": null,
+         "postedTime": null
+        },
+        "fuelProduct": "midgrade_gas"
+       },
+       {
+        "credit": {
+         "price": 0,
+         "formattedPrice": "- - -",
+         "nickname": null,
+         "postedTime": null
+        },
+        "fuelProduct": "premium_gas"
+       }
+      ]
+     },
+     {
+      "id": "12868",
+      "name": "Sunoco",
+      "latitude": 38.8962,
+      "longitude": -77.1391,
+      "distance": null,
+      "fuels": [
+       "regular_gas",
+       "midgrade_gas",
+       "premium_gas"
+      ],
+      "address": {
+       "line1": "5501 Langston Blvd",
+       "locality": "Arlington",
+       "region": "VA",
+       "postalCode": "22207"
+      },
+      "prices": [
+       {
+        "credit": {
+         "price": 0,
+         "formattedPrice": "- - -",
+         "nickname": null,
+         "postedTime": null
+        },
+        "fuelProduct": "regular_gas"
+       },
+       {
+        "credit": {
+         "price": 0,
+         "formattedPrice": "- - -",
+         "nickname": null,
+         "postedTime": null
+        },
+        "fuelProduct": "midgrade_gas"
+       },
+       {
+        "credit": {
+         "price": 0,
+         "formattedPrice": "- - -",
+         "nickname": null,
+         "postedTime": null
+        },
+        "fuelProduct": "premium_gas"
+       }
+      ]
+     },
+     {
+      "id": "18537",
+      "name": "Shell",
+      "latitude": 38.896137006921,
+      "longitude": -77.10177719593,
+      "distance": null,
+      "fuels": [
+       "regular_gas",
+       "midgrade_gas",
+       "premium_gas"
+      ],
+      "address": {
+       "line1": "3332 Langston Blvd",
+       "locality": "Arlington",
+       "region": "VA",
+       "postalCode": "22207"
+      },
+      "prices": [
+       {
+        "credit": {
+         "price": 0,
+         "formattedPrice": "- - -",
+         "nickname": null,
+         "postedTime": null
+        },
+        "fuelProduct": "regular_gas"
+       },
+       {
+        "credit": {
+         "price": 0,
+         "formattedPrice": "- - -",
+         "nickname": null,
+         "postedTime": null
+        },
+        "fuelProduct": "midgrade_gas"
+       },
+       {
+        "credit": {
+         "price": 0,
+         "formattedPrice": "- - -",
+         "nickname": null,
+         "postedTime": null
+        },
+        "fuelProduct": "premium_gas"
+       }
+      ]
+     },
+     {
+      "id": "130029",
+      "name": "Liberty",
+      "latitude": 38.89526,
+      "longitude": -77.1412,
+      "distance": null,
+      "fuels": [
+       "regular_gas",
+       "midgrade_gas",
+       "premium_gas"
+      ],
+      "address": {
+       "line1": "5618 Langston Blvd",
+       "locality": "Arlington",
+       "region": "VA",
+       "postalCode": "22207-1445"
+      },
+      "prices": [
+       {
+        "credit": {
+         "price": 0,
+         "formattedPrice": "- - -",
+         "nickname": null,
+         "postedTime": null
+        },
+        "fuelProduct": "regular_gas"
+       },
+       {
+        "credit": {
+         "price": 0,
+         "formattedPrice": "- - -",
+         "nickname": null,
+         "postedTime": null
+        },
+        "fuelProduct": "midgrade_gas"
+       },
+       {
+        "credit": {
+         "price": 0,
+         "formattedPrice": "- - -",
+         "nickname": null,
+         "postedTime": null
+        },
+        "fuelProduct": "premium_gas"
+       }
+      ]
+     }
+    ]
+   }
+  }
+ }
+}
