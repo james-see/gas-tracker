@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "index.html"
+      - "CNAME"
       - "data/**"
       - ".github/workflows/deploy-pages.yml"
   workflow_dispatch:
