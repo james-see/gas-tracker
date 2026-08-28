@@ -2,7 +2,6 @@
 
 import json
 import os
-import re
 from datetime import UTC, datetime, timedelta
 
 import pytest
@@ -18,15 +17,18 @@ def raw_22207():
         return json.load(f)
 
 
-def _entry(raw, zip_code="22207"):
-    return sl.parse_location(raw, zip_code, now="2026-08-27T19:05:00Z")
+def _entry(raw, key="22207", search="22207", label="Arlington 22207"):
+    return sl.parse_location(raw, key, search=search, label=label,
+                             now="2026-08-27T19:05:00Z")
 
 
 # --- parse_location ---
 
 def test_parse_trends(raw_22207):
     e = _entry(raw_22207)
-    assert e["zip"] == "22207"
+    assert e["key"] == "22207"
+    assert e["label"] == "Arlington 22207"
+    assert e["search"] == "22207"
     assert e["areaName"] == "Virginia"
     assert e["avg"] == 3.88
     assert e["low"] == 3.35
@@ -55,7 +57,6 @@ def test_parse_station_shape(raw_22207):
 
 
 def test_parse_caps_at_ten_stations(raw_22207):
-    # fixture has 9; synth a 15-station payload to prove the cap
     raw = json.loads(json.dumps(raw_22207))
     base = raw["data"]["locationBySearchTerm"]["stations"]["results"][0]
     raw["data"]["locationBySearchTerm"]["stations"]["results"] = [
@@ -91,41 +92,42 @@ def test_parse_handles_nulls_and_missing(raw_22207):
 # --- merge_latest ---
 
 def _old_snapshot():
-    return {"generated": "2026-08-26T23:05:00Z", "zips": {
-        "22207": {"zip": "22207", "areaName": "Virginia", "avg": 3.90,
-                  "low": 3.40, "stationCount": 9, "stale": False,
+    return {"generated": "2026-08-26T23:05:00Z", "locations": {
+        "22207": {"key": "22207", "label": "Arlington 22207", "areaName": "Virginia",
+                  "avg": 3.90, "low": 3.40, "stationCount": 9, "stale": False,
                   "lastUpdated": "2026-08-26T23:05:00Z", "stations": []},
-        "15222": {"zip": "15222", "areaName": "Pennsylvania", "avg": 3.75,
-                  "low": 3.29, "stationCount": 12, "stale": False,
-                  "lastUpdated": "2026-08-26T23:05:00Z", "stations": []},
+        "pittsburgh-pa": {"key": "pittsburgh-pa", "label": "Pittsburgh, PA",
+                          "areaName": "Pittsburgh", "avg": 4.35, "low": 3.60,
+                          "stationCount": 827, "stale": False,
+                          "lastUpdated": "2026-08-26T23:05:00Z", "stations": []},
     }}
 
 
 def test_merge_new_replaces_old():
     old = _old_snapshot()
-    new_22207 = _entry(json.load(open(FIXTURE)))
-    merged = sl.merge_latest(old, {"22207": new_22207}, now="2026-08-27T19:05:00Z")
-    assert merged["zips"]["22207"]["avg"] == 3.88
-    assert merged["zips"]["22207"]["stale"] is False
+    new = _entry(json.load(open(FIXTURE)))
+    merged = sl.merge_latest(old, {"22207": new}, now="2026-08-27T19:05:00Z")
+    assert merged["locations"]["22207"]["avg"] == 3.88
+    assert merged["locations"]["22207"]["stale"] is False
     assert merged["generated"] == "2026-08-27T19:05:00Z"
 
 
-def test_merge_failed_zip_carried_as_stale():
+def test_merge_failed_location_carried_as_stale():
     old = _old_snapshot()
-    new_22207 = _entry(json.load(open(FIXTURE)))
-    merged = sl.merge_latest(old, {"22207": new_22207}, ok_zips={"22207"},
+    new = _entry(json.load(open(FIXTURE)))
+    merged = sl.merge_latest(old, {"22207": new}, ok_keys={"22207"},
                              now="2026-08-27T19:05:00Z")
-    assert merged["zips"]["15222"]["stale"] is True
-    assert merged["zips"]["15222"]["avg"] == 3.75  # old values kept
-    assert merged["zips"]["22207"]["stale"] is False
+    assert merged["locations"]["pittsburgh-pa"]["stale"] is True
+    assert merged["locations"]["pittsburgh-pa"]["avg"] == 4.35  # old values kept
+    assert merged["locations"]["22207"]["stale"] is False
 
 
-def test_merge_new_zip_added():
+def test_merge_new_location_added():
     old = _old_snapshot()
     raw = json.load(open(FIXTURE))
     e = sl.parse_location(raw, "90210", now="2026-08-27T19:05:00Z")
     merged = sl.merge_latest(old, {"90210": e}, now="2026-08-27T19:05:00Z")
-    assert merged["zips"]["90210"]["zip"] == "90210"
+    assert merged["locations"]["90210"]["key"] == "90210"
 
 
 # --- append_history ---
@@ -161,9 +163,19 @@ def test_csrf_regex():
     assert not sl.CSRF_PATTERN.search("<html>no token</html>")
 
 
+# --- zip validation (for ondemand input) ---
+
 def test_zip_validation():
     assert sl.valid_zip("22207")
     assert not sl.valid_zip("2220")
     assert not sl.valid_zip("22207-1234")
     assert not sl.valid_zip("abcde")
     assert not sl.valid_zip("")
+
+
+# --- slugify (for city locations) ---
+
+def test_slugify():
+    assert sl.slugify("Pittsburgh, PA") == "pittsburgh-pa"
+    assert sl.slugify("New York, NY") == "new-york-ny"
+    assert sl.slugify("Washington, DC") == "washington-dc"
